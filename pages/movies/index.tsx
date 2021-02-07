@@ -31,11 +31,13 @@ const Movies = () => {
   
   const { query: { s = '' } } = router;
 
+  // 1페이지 데이터
   const { data, error } = useSWR(
     getMoviesUri({ s: s.toString(), page: 1 }),
     fetcher
   );
 
+  // 검색시 라우팅
   const onSearch = ({ s: newS }) => {
     router.push({
       pathname: '/movies',
@@ -43,10 +45,12 @@ const Movies = () => {
     });
   };
 
+  // loadMore을 콜하면 페이지만 변경
   const loadMore = () => {
     setPage(page + 1);
   };
 
+  // 1페이지 데이터가 변경되면(페이지가 리로드되면) movies데이터 리셋
   useEffect(() => {
     if (!s) {
       setIsLoading(false);
@@ -74,6 +78,7 @@ const Movies = () => {
     setIsLoading(false);
   }, [data]);
 
+  // 페이지가 변경되면(스크롤) 다음페이지 데이터 get
   useEffect(() => {
     if (page === 1) {
       return;

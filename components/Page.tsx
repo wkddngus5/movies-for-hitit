@@ -1,17 +1,23 @@
+import Link from 'next/link';
 import Layout, { Content, Header } from 'antd/lib/layout/layout';
-import Text from 'antd/lib/typography/Text';
+import Button from 'antd/lib/button';
+import { PropsWithChildren } from 'react';
 
-const Page: React.FC = ({ children }) => {
+const Page: React.FC<{style?: object}> = ({ style, children }) => {
   return (
     <Layout>
       <Header>
-        <Text style={{ color: '#fcfcfc' }}>Movies for Hitit</Text>
+        <Link href="/">
+          <Button type="link" style={{ color: '#fcfcfc' }}>Movies for Hitit</Button>
+        </Link>
       </Header>
       <Content style={{
         margin: 'auto',
         padding: '20px',
         width: '100%',
-        maxWidth: '720px',
+        maxWidth: '820px',
+        height: 'calc(100vh - 64px)',
+        ...style,
       }}>
         {children}
       </Content>

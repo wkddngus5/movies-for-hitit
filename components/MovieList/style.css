@@ -1,0 +1,12 @@
+.movie:hover {
+  cursor: pointer;
+  opacity: 0.5;
+}
+
+.movie.ant-btn-primary {
+  opacity: 1;
+}
+
+.movie.ant-btn-primary * {
+  color: #fff;
+}

@@ -1,5 +1,18 @@
 # Movies for Hitit
 
+## Getting Start
+1. development mode
+```
+  $ yarn dev
+```
+
+2. production mode
+```
+  $ yarn build
+  $ yarn start
+```
+
+
 ## Technical Stack
 - Next.js
 - React Hooks
@@ -15,3 +28,7 @@
 - MovieDetail: 선택된 영화 디테일 swr로 받아와 렌더링 
 - Page: 레이아웃
 - SearchMovie: 영화 검색 form
+
+
+## Domain
+- Movie
